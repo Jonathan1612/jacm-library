@@ -1,0 +1,22 @@
+.containerTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  color: #202124;
+  font-family: "Roboto", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.component {
+  color: #202124;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.prueba {
+  /* background-color: blueviolet; */
+}
