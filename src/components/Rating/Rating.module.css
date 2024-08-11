@@ -8,8 +8,7 @@
     transition: color 0.2s;
     user-select: none;
   }
-  
-  /* Tamaños */
+
   .small {
     font-size: 16px;
   }
@@ -22,7 +21,6 @@
     font-size: 32px;
   }
   
-  /* Variantes */
   .primary {
     color: #E37400;
   }

@@ -15,7 +15,7 @@ const Rating: React.FC<RatingProps> = ({
   maxRating = 5,
   initialRating = 0,
   variant = 'primary',
-  size = 'medium',
+  size = 'small',
   className = '',
   style,
   onRatingChange,
