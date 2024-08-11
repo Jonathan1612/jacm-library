@@ -55,8 +55,8 @@ function App() {
         <div style={{display: 'flex', alignItems: 'center'}}> 
           <div style={{ marginRight: '16px'}}>
             <Rating
-                maxRating={5}
-                initialRating={3}
+                maxRating={3}
+                initialRating={1}
                 variant='primary'
                 size='small'
                 onRatingChange={handleChangeRating}
@@ -65,7 +65,7 @@ function App() {
           <div style={{ marginRight: '16px'}}>
             <Rating
                 maxRating={5}
-                initialRating={3}
+                initialRating={1}
                 variant='secondary'
                 size='medium'
                 onRatingChange={handleChangeRating}
@@ -73,8 +73,8 @@ function App() {
           </div>
           <div style={{ marginRight: '16px'}}>
             <Rating
-                maxRating={5}
-                initialRating={3}
+                maxRating={7}
+                initialRating={1}
                 variant='normal'
                 size='large'
                 onRatingChange={handleChangeRating}

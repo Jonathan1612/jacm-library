@@ -2,17 +2,17 @@ import { useState, CSSProperties } from 'react';
 import styles from './Rating.module.css';
 
 type RatingProps = {
-  maxRating?: number; // Número máximo de estrellas
-  initialRating?: number; // Puntuación inicial seleccionada
-  variant?: 'primary' | 'secondary' | 'normal'; // Variantes de estilo
-  size?: 'small' | 'medium' | 'large'; // Tamaños de las estrellas
+  maxRating?: number;
+  initialRating?: number;
+  variant?: 'primary' | 'secondary' | 'normal';
+  size?: 'small' | 'medium' | 'large';
   className?: string;
   style?: CSSProperties;
-  onRatingChange?: (rating: number) => void; // Callback para manejar cambios en la puntuación
+  onRatingChange?: (rating: number) => void;
 };
 
 const Rating: React.FC<RatingProps> = ({
-  maxRating = 8,
+  maxRating = 5,
   initialRating = 0,
   variant = 'primary',
   size = 'medium',
@@ -21,6 +21,7 @@ const Rating: React.FC<RatingProps> = ({
   onRatingChange,
 }) => {
   const [rating, setRating] = useState(initialRating);
+  const [hoverRating, setHoverRating] = useState<number | null>(null);
 
   const handleRating = (index: number) => {
     setRating(index + 1);
@@ -29,15 +30,27 @@ const Rating: React.FC<RatingProps> = ({
     }
   };
 
+  const handleMouseEnter = (index: number) => {
+    setHoverRating(index + 1);
+  };
+
+  const handleMouseLeave = () => {
+    setHoverRating(null);
+  };
+
   return (
     <div className={`${styles.ratingContainer} ${className}`} style={style}>
       {Array.from({ length: maxRating }, (_, index) => (
         <span
           key={index}
           className={`${styles.star} ${styles[size]} ${
-            index < rating ? styles[variant] : ''
+            (hoverRating !== null ? index < hoverRating : index < rating)
+              ? styles[variant]
+              : ''
           }`}
           onClick={() => handleRating(index)}
+          onMouseEnter={() => handleMouseEnter(index)}
+          onMouseLeave={handleMouseLeave}
         >
           ★
         </span>
