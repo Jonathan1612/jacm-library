@@ -23,6 +23,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={`${styles.button} ${styles[variant]} ${styles[size]} ${className}`}
+      style={buttonProps.style || {}}
       {...buttonProps}
     >
       { leftIcon && <img className={styles.leftIcon} src={leftIcon} /> }
