@@ -1,13 +1,13 @@
 .tabsContainer {
     width: 100%;
-  }
-  
-  .tabList {
+}
+
+.tabList {
     display: flex;
     border-bottom: 2px solid #ccc;
-  }
-  
-  .tabButton {
+}
+
+.tabButton {
     background: none;
     border: none;
     cursor: pointer;
@@ -15,63 +15,61 @@
     margin: 0;
     font-size: 16px;
     transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .tabButton:hover {
+}
+
+.tabButton:hover {
     background-color: #f1f1f1;
-  }
-  
-  .active {
+}
+
+.active {
     position: relative;
     color: #4285F4;
-    font-weight: bold;
-  }
-  
-  .active::after {
+    font-weight: 500;
+}
+
+.active::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    height: 3px; /* Grosor del borde */
+    height: 3px;
     background-color: #4285F4;
-    border-radius: 62.5rem 62.5rem 0 0; /* Redondeado en la parte superior */
-  }
-  
-  .tabContent {
+    border-radius: 62.5rem 62.5rem 0 0;
+}
+
+.tabContent {
     padding: 20px;
-  }
-  
-  /* Variantes */
-  .primary .tabButton.active {
+}
+
+.primary .tabButton.active {
     border-color: #4285F4;
     color: #4285F4;
-  }
-  
-  .secondary .tabButton.active {
+}
+
+.secondary .tabButton.active {
     border-color: #174EA6;
     color: #174EA6;
-  }
-  
-  .normal .tabButton.active {
+}
+
+.normal .tabButton.active {
     border-color: #D2E3FC;
     color: #202124;
-  }
-  
-  /* Tamaños */
-  .small .tabButton {
+}
+
+
+.small .tabButton {
     font-size: 14px;
     padding: 8px 16px;
-  }
-  
-  .medium .tabButton {
+}
+
+.medium .tabButton {
     font-size: 16px;
     padding: 10px 20px;
-  }
-  
-  .large .tabButton {
+}
+
+.large .tabButton {
     font-size: 18px;
     padding: 12px 24px;
-  }
-  
+}

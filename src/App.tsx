@@ -6,6 +6,7 @@ import Rating from './components/Rating/Rating';
 import Select from './components/Select/Select';
 import Slider from './components/Slider/Slider';
 import { Tabs, Tab } from './components/Tabs/Tabs';
+import Switch from './components/Switch/Switch';
 import './App.css';
 
 
@@ -21,6 +22,10 @@ function App() {
 
   const handleSliderChange = (value: number) => {
     console.log(`Nuevo valor del slider: ${value}`);
+  };
+
+  const handleSwitchChange = (checked: boolean) => {
+    console.log(`Switch está ahora: ${checked ? 'On' : 'Off'}`);
   };
 
   const options = [
@@ -170,19 +175,53 @@ function App() {
           </div>
         </div>
         <div>
-        <h2 className="component">Tabs</h2>
-        <Tabs defaultActiveTab={0} variant="primary" size="medium">
-          <Tab label="Tab 1">
-            <p>Contenido de la pestaña 1</p>
-          </Tab>
-          <Tab label="Tab 2">
-            <p>Contenido de la pestaña 2</p>
-          </Tab>
-          <Tab label="Tab 3">
-            <p>Contenido de la pestaña 3</p>
-          </Tab>
-        </Tabs>
-      </div>
+          <h2 className="component">Tabs</h2>
+          <Tabs defaultActiveTab={0} variant="primary" size="medium">
+            <Tab label="General">
+              <p>Contenido de la pestaña 1</p>
+            </Tab>
+            <Tab label="Productos">
+              <p>Contenido de la pestaña 2</p>
+            </Tab>
+            <Tab label="Comentarios">
+              <p>Contenido de la pestaña 3</p>
+            </Tab>
+          </Tabs>
+        </div>
+        <div>
+          <div>
+            <h2 className='component'>Switch</h2>
+            <div style={{display: 'flex'}}>
+              <div style={{ marginRight: '16px' }}>
+                <Switch
+                  leftName='Hola'
+                  rightName='Hola'
+                  variant='primary'
+                  size='small'
+                  onChange={handleSwitchChange}
+                />
+              </div>
+              <div style={{ marginRight: '16px' }}>
+                <Switch
+                  leftName='Hola'
+                  rightName='Hola'
+                  variant='secondary'
+                  size='medium'
+                  onChange={handleSwitchChange}
+                />
+              </div>
+              <div style={{ marginRight: '16px' }}>
+                <Switch
+                  leftName='Hola'
+                  rightName='Hola'
+                  variant='normal'
+                  size='large'
+                  onChange={handleSwitchChange}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
