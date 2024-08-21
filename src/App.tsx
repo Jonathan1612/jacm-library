@@ -7,6 +7,8 @@ import Select from './components/Select/Select';
 import Slider from './components/Slider/Slider';
 import { Tabs, Tab } from './components/Tabs/Tabs';
 import Switch from './components/Switch/Switch';
+import TextField from './components/TextField/TextField';
+import DraggableList from './components/DraggableList/DraggableList';
 import './App.css';
 
 
@@ -26,6 +28,14 @@ function App() {
 
   const handleSwitchChange = (checked: boolean) => {
     console.log(`Switch está ahora: ${checked ? 'On' : 'Off'}`);
+  };
+
+  const handleTextFieldChange = (value: string) => {
+    console.log(`TextField value: ${value}`);
+  };
+
+  const handleItemsChange = (newItems: { id: number; content: string }[]) => {
+    console.log('Nuevo orden:', newItems);
   };
 
   const options = [
@@ -217,6 +227,71 @@ function App() {
                   variant='normal'
                   size='large'
                   onChange={handleSwitchChange}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <h2 className='component'>TextField</h2>
+            <div style={{display: 'flex'}}>
+              <div style={{ marginRight: '16px' }}>
+                <TextField
+                  variant='primary'
+                  size='small'
+                  placeholder='Escribe algo...'
+                  onChange={handleTextFieldChange}
+                />
+              </div>
+              <div style={{ marginRight: '16px' }}>
+              <TextField
+                variant='secondary'
+                size='medium'
+                placeholder='Escribe algo...'
+                onChange={handleTextFieldChange}
+              />
+              </div>
+              <div style={{ marginRight: '16px' }}>
+                <TextField
+                  variant='normal'
+                  size='large'
+                  placeholder='Escribe algo...'
+                  onChange={handleTextFieldChange}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <h2 className='component'>DraggableList</h2>
+            <div style={{display: 'flex'}}>
+              <div style={{ marginRight: '16px' }}>
+              <DraggableList
+        items={[
+          { id: 1, content: 'Item 1' },
+          { id: 2, content: 'Item 2' },
+          { id: 3, content: 'Item 3' },
+          { id: 4, content: 'Item 4' },
+        ]}
+        onItemsChange={handleItemsChange}
+      />
+              </div>
+              <div style={{ marginRight: '16px' }}>
+              <TextField
+                variant='secondary'
+                size='medium'
+                placeholder='Escribe algo...'
+                onChange={handleTextFieldChange}
+              />
+              </div>
+              <div style={{ marginRight: '16px' }}>
+                <TextField
+                  variant='normal'
+                  size='large'
+                  placeholder='Escribe algo...'
+                  onChange={handleTextFieldChange}
                 />
               </div>
             </div>
