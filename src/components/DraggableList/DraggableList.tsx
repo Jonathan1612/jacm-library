@@ -1,5 +1,5 @@
-import { useState, CSSProperties } from 'react';
-import styles from './DraggableList.module.css';
+import { useState, CSSProperties } from "react";
+import styles from "./DraggableList.module.css";
 
 type DraggableListProps = {
   items: { id: number; content: string }[]; // Lista de elementos a mostrar
@@ -11,7 +11,7 @@ type DraggableListProps = {
 const DraggableList: React.FC<DraggableListProps> = ({
   items: initialItems,
   onItemsChange,
-  className = '',
+  className = "",
   style,
 }) => {
   const [items, setItems] = useState(initialItems);
@@ -48,7 +48,7 @@ const DraggableList: React.FC<DraggableListProps> = ({
           onDragStart={() => onDragStart(index)}
           onDragOver={() => onDragOver(index)}
           onDragEnd={onDragEnd}
-          className={draggedItemIndex === index ? styles.dragging : ''}
+          className={draggedItemIndex === index ? styles.dragging : ""}
         >
           {item.content}
         </li>

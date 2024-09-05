@@ -1,11 +1,11 @@
-import { useState, CSSProperties } from 'react';
-import styles from './Rating.module.css';
+import { useState, CSSProperties } from "react";
+import styles from "./Rating.module.css";
 
 type RatingProps = {
   maxRating?: number;
   initialRating?: number;
-  variant?: 'primary' | 'secondary' | 'normal';
-  size?: 'small' | 'medium' | 'large';
+  variant?: "primary" | "secondary" | "normal";
+  size?: "small" | "medium" | "large";
   className?: string;
   style?: CSSProperties;
   onRatingChange?: (rating: number) => void;
@@ -14,9 +14,9 @@ type RatingProps = {
 const Rating: React.FC<RatingProps> = ({
   maxRating = 5,
   initialRating = 0,
-  variant = 'primary',
-  size = 'small',
-  className = '',
+  variant = "primary",
+  size = "small",
+  className = "",
   style,
   onRatingChange,
 }) => {
@@ -46,7 +46,7 @@ const Rating: React.FC<RatingProps> = ({
           className={`${styles.star} ${styles[size]} ${
             (hoverRating !== null ? index < hoverRating : index < rating)
               ? styles[variant]
-              : ''
+              : ""
           }`}
           onClick={() => handleRating(index)}
           onMouseEnter={() => handleMouseEnter(index)}
