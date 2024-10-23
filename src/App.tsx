@@ -9,9 +9,18 @@ import { Tabs, Tab } from "./components/Tabs/Tabs";
 import Switch from "./components/Switch/Switch";
 import TextField from "./components/TextField/TextField";
 import DraggableList from "./components/DraggableList/DraggableList";
+import CustomDate from "./components/CustomDate/CustomDate";
 import "./App.css";
+import { useState } from "react";
 
 function App() {
+
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+
+  const handleDateChange = (date: Date) => {
+    setSelectedDate(date);
+    console.log('Fecha seleccionada:', date); // Muestra la fecha en la consola
+  };
   const handleChangeRating = (newRating: number) => {
     console.log(`Nuevo rating: ${newRating}`);
   };
@@ -315,6 +324,29 @@ function App() {
                 />
               </div>
             </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <h1>Custom Calendar Component</h1>
+
+            <p>
+              Selecciona una fecha usando el calendario o ingrésala manualmente:
+            </p>
+
+            {/* Usa el componente Calendar y pasa la función handleDateChange */}
+            <CustomDate onSelectDate={handleDateChange} />
+
+            {selectedDate && (
+              <p>
+                Fecha seleccionada:{" "}
+                {selectedDate.toLocaleDateString("es-ES", {
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "numeric",
+                })}
+              </p>
+            )}
           </div>
         </div>
       </div>
