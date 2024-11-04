@@ -1,0 +1,81 @@
+/* Estilos generales para el checkbox */
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Ocultar el checkbox nativo */
+.checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Personalización del checkmark */
+.checkmark {
+    background-color: #f0f0f0;
+    border: 2px solid #9AA0A6;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* Icono dentro del checkmark cuando está seleccionado */
+.primary {
+    background-color: #4285F4;
+    border-color: #4285F4;
+}
+
+.primary::after {
+    content: '';
+    width: 5px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.secondary {
+    background-color: #4285F4;
+    border-color: #4285F4;
+}
+
+.normal {
+    background-color: #4285F4;
+    border-color: #4285F4;
+}
+
+.small {
+    width: 10px;
+    height: 10px;
+    padding: 2px 3px 4px 3px;
+}
+
+.medium {
+    width: 14px;
+    height: 14px;
+    padding: 2px 3px 4px 3px;
+}
+
+.large {
+    width: 18px;
+    height: 18px;
+    padding: 2px 3px 4px 3px;
+}
+/* Texto de la etiqueta */
+.labelTextLeft {
+    margin-right: 8px;
+    color: #202124;
+}
+
+.labelTextRight {
+    margin-left: 8px;
+    color: #202124;
+}

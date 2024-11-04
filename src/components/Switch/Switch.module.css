@@ -1,0 +1,124 @@
+.containerDiv {
+    display: flex;
+    align-items: center;
+}
+
+.switchContainer {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+  
+  .switchInput {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .switchSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .nameL {
+    margin-right: 8px;
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+  }
+
+  .nameR {
+    color: #202124;
+    margin-left: 8px;
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+  }
+  
+  .switchSlider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  .switchInput:checked + .switchSlider {
+    background-color: #4285F4;
+  }
+  
+  .switchInput:checked + .switchSlider:before {
+    transform: translateX(26px);
+  }
+  
+  /* Variantes */
+  .primary .switchSlider {
+    background-color: #CCC;
+  }
+  
+  .primary .switchInput:checked + .switchSlider {
+    background-color: #4285F4;
+  }
+  
+  .secondary .switchSlider {
+    background-color: #CCC;
+  }
+  
+  .secondary .switchInput:checked + .switchSlider {
+    background-color: #174EA6;
+  }
+  
+  .normal .switchSlider {
+    background-color: #CCC;
+  }
+  
+  .normal .switchInput:checked + .switchSlider {
+    background-color: #A6C2F2;
+  }
+  
+  /* Tamaños */
+  .small {
+    width: 40px;
+    height: 20px;
+  }
+  
+  .small .switchSlider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    right: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  .medium {
+    width: 50px;
+    height: 24px;
+  }
+  
+  .large {
+    width: 60px;
+    height: 30px;
+  }
+  
+  .large .switchSlider:before {
+    height: 26px;
+    width: 26px;
+  }
+  
