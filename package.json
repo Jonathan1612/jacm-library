@@ -49,6 +49,7 @@
     }
   ],
   "devDependencies": {
+    "@types/react-test-renderer": "^18.3.0",
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.25.9",
     "@babel/preset-typescript": "^7.26.0",
@@ -73,7 +74,6 @@
   },
   "dependencies": {
     "@types/react-dom": "^18.3.1",
-    "@types/react-test-renderer": "^18.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-test-renderer": "^18.3.1"
