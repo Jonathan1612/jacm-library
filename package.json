@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -7,6 +7,10 @@
     "dist",
     "src"
   ],
+  "repository": {
+    "url": "https://github.com/Jonathan1612/jacm-library.git",
+    "type": "git"
+  },
   "engines": {
     "node": ">=10"
   },
@@ -14,6 +18,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test",
+    "test:watch": "tsdx test --watch",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
@@ -44,9 +49,20 @@
     }
   ],
   "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "@babel/preset-typescript": "^7.26.0",
     "@rollup/plugin-image": "^3.0.3",
     "@size-limit/preset-small-lib": "^11.1.6",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "babel-jest": "^29.7.0",
     "husky": "^9.1.6",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.5.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-svg": "^2.0.0",
     "rollup-plugin-svgr": "^2.1.0",
@@ -54,5 +70,27 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.8.1",
     "typescript": "^3.9.10"
+  },
+  "dependencies": {
+    "@types/react-dom": "^18.3.1",
+    "@types/react-test-renderer": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-test-renderer": "^18.3.1"
+  },
+  "keywords": [
+    "product",
+    "library",
+    "react",
+    "typescript",
+    "components",
+    "jonathan",
+    "colin"
+  ],
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "identity-obj-proxy",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
   }
 }

@@ -1,5 +1,5 @@
-import React from "react";
-import { useState, CSSProperties, InputHTMLAttributes } from "react";
+"use client";
+import React,{ useState, CSSProperties, InputHTMLAttributes } from "react";
 import styles from "./Checkbox.module.css";
 
 type CheckboxProps = {
@@ -10,7 +10,7 @@ type CheckboxProps = {
   nameLeft?: string;
   nameRight?: string;
   initialChecked?: boolean;
-} & Omit<InputHTMLAttributes<HTMLInputElement>, "type">;
+} & Omit<InputHTMLAttributes<HTMLInputElement>, "type">; 
 
 const Checkbox: React.FC<CheckboxProps> = ({
   variant = "primary",

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { useState, CSSProperties, useRef } from "react";
 import styles from "./Select.module.css";

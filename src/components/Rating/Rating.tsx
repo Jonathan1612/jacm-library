@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { useState, CSSProperties } from "react";
 import styles from "./Rating.module.css";

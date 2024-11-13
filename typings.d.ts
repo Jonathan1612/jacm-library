@@ -13,6 +13,12 @@ declare module "*.svg" {
     export default value;
 }
 
+declare module "*.test" {
+    const value: any;
+    export default value;
+}
+
+
 declare module '*.module.css' {
     const classes: { [key: string]: string };
     export default classes;

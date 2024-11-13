@@ -1,3 +1,4 @@
+"use client";
 import React, { CSSProperties, useState, ChangeEvent } from "react";
 import styles from "./Switch.module.css";
 

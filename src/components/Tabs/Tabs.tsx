@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, ReactNode, CSSProperties } from "react";
 import styles from "./Tabs.modele.css";
 
