@@ -1,0 +1,36 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: transparent;
+  color: #fff;
+  height: 60px;
+}
+
+.logo a {
+  color: #121212;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+}
+
+.navItem {
+  margin-left: 20px;
+}
+
+.navItem a {
+  color: #121212;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.navItem a:hover {
+  color: #ddd;
+}

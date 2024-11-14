@@ -1,5 +1,4 @@
-// index.ts en la raíz de jacm-library
-
+export { default as Avatar } from './Button/Button';
 export { default as Button } from './Button/Button';
 export { default as Checkbox } from './Checkbox/Checkbox';
 export { default as DraggableList } from './DraggableList/DraggableList';
@@ -10,3 +9,4 @@ export { default as Slider } from './Slider/Slider';
 export { default as Switch } from './Switch/Switch';
 export { Tabs, Tab } from './Tabs/Tabs'; // asumiendo que Tabs y Tab son exportaciones nombradas
 export { default as TextField } from './TextField/TextField';
+export { default as Tooltip } from './Tooltip/Tooltip';
