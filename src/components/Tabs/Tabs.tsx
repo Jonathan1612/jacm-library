@@ -1,16 +1,16 @@
 "use client";
 import React, { useState, ReactNode, CSSProperties } from "react";
-import styles from "./Tabs.modele.css";
+import styles from "./Tabs.module.css";
 
-// Resto del código del componente
-
+// 📝 **Props para Tab**
 type TabProps = {
   label: string; // Etiqueta visible de la pestaña
   children: ReactNode; // Contenido que se muestra al seleccionar la pestaña
 };
 
+// 📝 **Props para Tabs**
 type TabsProps = {
-  children: ReactNode; // Deben ser Tab components
+  children: ReactNode; // Deben ser componentes Tab
   defaultActiveTab?: number; // Índice de la pestaña que está activa por defecto
   variant?: "primary" | "secondary" | "normal";
   size?: "small" | "medium" | "large";
@@ -18,10 +18,12 @@ type TabsProps = {
   style?: CSSProperties;
 };
 
+// 📌 **Componente Tab**
 const Tab: React.FC<TabProps> = ({ children }) => {
   return <div className={styles.tabContent}>{children}</div>;
 };
 
+// 📌 **Componente Tabs**
 const Tabs: React.FC<TabsProps> = ({
   children,
   defaultActiveTab = 0,
@@ -30,29 +32,41 @@ const Tabs: React.FC<TabsProps> = ({
   className = "",
   style,
 }) => {
-  const [activeTab, setActiveTab] = useState(defaultActiveTab);
+  const [activeTab, setActiveTab] = useState<number>(defaultActiveTab);
 
+  // 🧠 **Filtrar y validar los hijos como elementos válidos de React**
+  const childrenArray = React.Children.toArray(children).filter(
+    (child) => React.isValidElement(child) && child.type === Tab
+  ) as React.ReactElement<TabProps>[];
+
+  // 🛡️ **Evitar índices fuera de rango**
+  const safeActiveTab = Math.min(Math.max(activeTab, 0), childrenArray.length - 1);
+
+  // 🔄 **Manejar clic en las pestañas**
   const handleTabClick = (index: number) => {
     setActiveTab(index);
   };
 
   return (
     <div className={`${styles.tabsContainer} ${className}`} style={style}>
+      {/* 📝 Lista de botones de las pestañas */}
       <div className={`${styles.tabList} ${styles[variant]} ${styles[size]}`}>
-        {React.Children.map(children, (child, index) => (
+        {childrenArray.map((child, index) => (
           <button
             key={index}
             className={`${styles.tabButton} ${
-              activeTab === index ? styles.active : ""
+              safeActiveTab === index ? styles.active : ""
             }`}
             onClick={() => handleTabClick(index)}
           >
-            {(child as React.ReactElement<TabProps>).props.label}
+            {child.props.label}
           </button>
         ))}
       </div>
+
+      {/* 📝 Contenido de la pestaña activa */}
       <div className={styles.tabContent}>
-        {React.Children.toArray(children)[activeTab]}
+        {childrenArray[safeActiveTab]?.props.children}
       </div>
     </div>
   );

@@ -2,8 +2,8 @@ import React,{ CSSProperties, ButtonHTMLAttributes } from "react";
 import styles from "./Button.module.css";
 
 type ButtonProps = {
-  className?: string;
-  style?: CSSProperties;
+  useClassName?: string;
+  useStyle?: CSSProperties;
   leftIcon?: string;
   rightIcon?: string;
   name: string;
@@ -15,15 +15,15 @@ const Button: React.FC<ButtonProps> = ({
   name,
   variant = "primary",
   size = "small",
-  className = "",
+  useClassName = "",
   leftIcon,
   rightIcon,
   ...buttonProps
 }) => {
   return (
     <button
-      className={`${styles.button} ${styles[variant]} ${styles[size]} ${className}`}
-      style={buttonProps.style || {}}
+      className={`${styles.button} ${styles[variant]} ${styles[size]} ${useClassName}`}
+      style={buttonProps.useStyle || {}}
       {...buttonProps}
     >
       {leftIcon && <img className={styles.leftIcon} src={leftIcon} />}

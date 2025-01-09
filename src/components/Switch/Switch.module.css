@@ -99,9 +99,9 @@
     content: "";
     height: 16px;
     width: 16px;
-    left: 2px;
+    left: 1%;
     bottom: 2px;
-    right: 2px;
+    right: 0px;
     background-color: white;
     transition: 0.4s;
     border-radius: 50%;

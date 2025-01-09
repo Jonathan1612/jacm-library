@@ -3,13 +3,22 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  background-color: transparent;
+  background-color: #1d1c86;
   color: #fff;
   height: 60px;
 }
 
+.title {
+  color: #ffffff;
+}
+
+.logo a:hover {
+  color: #ffffffa4;
+}
+
 .logo a {
-  color: #121212;
+  color: #ffffff;
+  font-family: Roboto;
   font-size: 1.5rem;
   text-decoration: none;
   font-weight: bold;
@@ -25,7 +34,7 @@
 }
 
 .navItem a {
-  color: #121212;
+  color: #ffffff;
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s;
@@ -33,4 +42,5 @@
 
 .navItem a:hover {
   color: #ddd;
+  border-bottom: 1px solid #ddd;
 }

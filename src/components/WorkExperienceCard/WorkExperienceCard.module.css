@@ -1,0 +1,61 @@
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  margin-bottom: 12px;
+}
+
+.vision {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  text-wrap: pretty;
+}
+
+.company {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: Roboto;
+  font-size: 24px;
+  color: #333;
+}
+
+.position {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 4px;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 4px;
+}
+
+.body {
+  font-size: 1rem;
+  color: #333;
+}
+
+.activities {
+  margin-bottom: 12px;
+}
+
+.languages {
+  margin-top: 12px;
+}
+
+.languages ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.languages li {
+  font-size: 0.9rem;
+  color: #555;
+}

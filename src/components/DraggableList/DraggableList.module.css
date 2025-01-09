@@ -1,5 +1,30 @@
 /* DraggableList.module.css */
+.containerList {
+  border: 1px solid #ccc; /* Borde sutil */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 
+              0 6px 20px rgba(0, 0, 0, 0.15); /* Sombras suaves */
+  background-color: #fff;
+  margin: 20px auto;
+  overflow: hidden;
+}
 
+.containerTitle {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  background-color: #0f1849;
+  justify-content: center;
+  align-items: center;
+  
+}
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: Roboto;
+  color: #ffffff;
+}
 .draggableList {
     padding: 0;
     list-style-type: none;
@@ -9,10 +34,8 @@
   
   .draggableList li {
     padding: 16px;
-    margin-bottom: 8px;
     background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border-bottom: 1px solid #ccc;
     cursor: grab;
     transition: transform 0.2s ease;
   }

@@ -1,12 +1,13 @@
 "use client";
-import React, { CSSProperties, useState, ChangeEvent } from "react";
+import React, { CSSProperties, ChangeEvent } from "react";
 import styles from "./Switch.module.css";
 
 type SwitchProps = {
-  checked?: boolean; // Si el switch está activado o no
-  onChange?: (checked: boolean) => void; // Función que se ejecuta al cambiar el estado
-  variant?: "primary" | "secondary" | "normal"; // Variantes de estilo
-  size?: "small" | "medium" | "large"; // Tamaños del switch
+  checked?: boolean;
+  defaultChecked?: boolean;
+  onChange?: (checked: boolean) => void;
+  variant?: "primary" | "secondary" | "normal";
+  size?: "small" | "medium" | "large";
   leftName?: string;
   rightName?: string;
   className?: string;
@@ -14,7 +15,8 @@ type SwitchProps = {
 };
 
 const Switch: React.FC<SwitchProps> = ({
-  checked: controlledChecked,
+  checked,
+  defaultChecked = false,
   onChange,
   variant = "primary",
   size = "medium",
@@ -23,20 +25,26 @@ const Switch: React.FC<SwitchProps> = ({
   className = "",
   style,
 }) => {
-  const [checked, setChecked] = useState(controlledChecked || false);
+  const [internalChecked, setInternalChecked] = React.useState(defaultChecked);
+
+  const isControlled = checked !== undefined;
+  const currentChecked = isControlled ? checked : internalChecked;
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newChecked = e.target.checked;
-    if (controlledChecked === undefined) {
-      setChecked(newChecked);
+
+    if (!isControlled) {
+      setInternalChecked(newChecked);
     }
+
     if (onChange) {
       onChange(newChecked);
     }
   };
+
   return (
     <div className={styles.containerDiv}>
-      <span className={styles.nameL}>{leftName}</span>
+      {leftName && <span className={styles.nameL}>{leftName}</span>}
       <label
         className={`${styles.switchContainer} ${className} ${styles[variant]} ${styles[size]}`}
         style={style}
@@ -44,14 +52,12 @@ const Switch: React.FC<SwitchProps> = ({
         <input
           type="checkbox"
           className={styles.switchInput}
-          checked={
-            controlledChecked !== undefined ? controlledChecked : checked
-          }
+          checked={currentChecked}
           onChange={handleChange}
         />
         <span className={styles.switchSlider}></span>
       </label>
-      <span className={styles.nameR}>{rightName}</span>
+      {rightName && <span className={styles.nameR}>{rightName}</span>}
     </div>
   );
 };

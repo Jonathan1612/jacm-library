@@ -2,10 +2,10 @@
 import React from 'react';
 import styles from './Avatar.module.css';
 
-interface AvatarProps {
+export interface AvatarProps {
   src?: string;
   alt?: string;
-  size?: 'small' | 'medium' | 'large' | number;
+  size?: 'small' | 'medium' | 'large';
   name?: string;
   shape?: 'circle' | 'square';
 }
