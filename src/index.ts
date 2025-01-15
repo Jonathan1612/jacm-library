@@ -5,9 +5,12 @@ export { default as DraggableList } from './components/DraggableList/DraggableLi
 export { default as IconMediaLink } from './components/IconMediaLink/IconMediaLink';
 export { default as Label } from './components/Label/Label';
 export { default as NavBar } from './components/NavBar/NavBar';
+export { default as NestedMenu } from './components/NestedMenu/NestedMenu';
+export { default as NestedMenuItem } from './components/NestedMenuItem/NestedMenuItem';
 export { default as ProfileCard } from './components/ProfileCard/ProfileCard';
 export { default as Rating } from './components/Rating/Rating';
 export { default as Select } from './components/Select/Select';
+export { default as Sidebar } from './components/Sidebar/Sidebar';
 export { default as Slider } from './components/Slider/Slider';
 export { default as SkillCard } from './components/SkillCard/SkillCard';
 export { default as SkillList } from './components/SkillList/SkillList';
