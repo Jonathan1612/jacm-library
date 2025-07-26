@@ -1,0 +1,291 @@
+/* Switch Component Styles */
+.container {
+  display: inline-flex;
+  align-items: flex-start;
+}
+
+.label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch {
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 999px;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  border: 2px solid transparent;
+}
+
+/* Tamaños */
+.small {
+  width: 36px;
+  height: 20px;
+}
+
+.medium {
+  width: 44px;
+  height: 24px;
+}
+
+.large {
+  width: 52px;
+  height: 28px;
+}
+
+/* Input oculto */
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.input:focus + .track {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+/* Track (fondo del switch) */
+.track {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-color: var(--color-border, #dee2e6);
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Colores para el track cuando está activo */
+.primary .checkedTrack {
+  background-color: var(--color-primary, #007bff);
+}
+
+.secondary .checkedTrack {
+  background-color: var(--color-secondary, #6c757d);
+}
+
+.success .checkedTrack {
+  background-color: var(--color-success, #28a745);
+}
+
+.warning .checkedTrack {
+  background-color: var(--color-warning, #ffc107);
+}
+
+.error .checkedTrack {
+  background-color: var(--color-error, #dc3545);
+}
+
+/* Thumb (círculo que se mueve) */
+.thumb {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  left: 2px;
+  transform: translateX(0);
+}
+
+.small .thumb {
+  width: 16px;
+  height: 16px;
+}
+
+.medium .thumb {
+  width: 20px;
+  height: 20px;
+}
+
+.large .thumb {
+  width: 24px;
+  height: 24px;
+}
+
+/* Thumb cuando está activo */
+.small .checkedThumb {
+  transform: translateX(16px);
+}
+
+.medium .checkedThumb {
+  transform: translateX(20px);
+}
+
+.large .checkedThumb {
+  transform: translateX(24px);
+}
+
+/* Estados */
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.disabled .label {
+  cursor: not-allowed;
+}
+
+.loading .thumb {
+  cursor: wait;
+}
+
+/* Iconos */
+.icon {
+  width: 10px;
+  height: 10px;
+  color: var(--color-text-secondary, #6c757d);
+  transition: opacity 0.2s ease-in-out;
+}
+
+.large .icon {
+  width: 12px;
+  height: 12px;
+}
+
+.checkIcon {
+  opacity: 0;
+  color: var(--color-success, #28a745);
+}
+
+.crossIcon {
+  opacity: 1;
+  position: absolute;
+  color: var(--color-error, #dc3545);
+}
+
+.checked .checkIcon {
+  opacity: 1;
+}
+
+.checked .crossIcon {
+  opacity: 0;
+}
+
+/* Spinner para loading */
+.spinner {
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid var(--color-border, #dee2e6);
+  border-top: 1.5px solid var(--color-primary, #007bff);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.large .spinner {
+  width: 12px;
+  height: 12px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Contenido de la etiqueta */
+.labelContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.labelText {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text, #212529);
+  line-height: 1.4;
+}
+
+.description {
+  font-size: 12px;
+  color: var(--color-text-secondary, #6c757d);
+  line-height: 1.3;
+}
+
+/* Hover states */
+.switch:hover:not(.disabled) .track {
+  background-color: var(--color-text-secondary, #6c757d);
+}
+
+.switch:hover:not(.disabled) .checkedTrack {
+  filter: brightness(1.1);
+}
+
+/* Modo oscuro */
+:global(html.dark) .track {
+  background-color: var(--color-border, #4a5568);
+}
+
+:global(html.dark) .thumb {
+  background-color: var(--color-surface, #2d3748);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+:global(html.dark) .labelText {
+  color: var(--color-text, #f7fafc);
+}
+
+:global(html.dark) .description {
+  color: var(--color-text-secondary, #a0aec0);
+}
+
+:global(html.dark) .icon {
+  color: var(--color-text-secondary, #a0aec0);
+}
+
+:global(html.dark) .spinner {
+  border-color: var(--color-border, #4a5568);
+  border-top-color: var(--color-primary, #4299e1);
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .switch,
+  .track,
+  .thumb,
+  .icon {
+    transition: none;
+  }
+  
+  .spinner {
+    animation: none;
+  }
+}
+
+/* Focus visible */
+.input:focus-visible + .track {
+  outline: 2px solid var(--color-primary, #007bff);
+  outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .large {
+    width: 48px;
+    height: 26px;
+  }
+  
+  .large .thumb {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .large .checkedThumb {
+    transform: translateX(22px);
+  }
+}

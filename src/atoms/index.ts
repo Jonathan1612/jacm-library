@@ -1,8 +1,24 @@
-// Átomos - Componentes más básicos e indivisibles
-export { default as Avatar, Avatar as AtomAvatar } from './Avatar';
-export { default as Button, Button as AtomButton } from './Button';
-export { default as Label, Label as AtomLabel } from './Label';
+// Atomic Design - Atoms
+export { Avatar } from './Avatar/Avatar';
+export type { AvatarProps } from './Avatar/Avatar';
 
-export type { AvatarProps } from './Avatar';
-export type { ButtonProps } from './Button';
-export type { LabelProps } from './Label';
+export { Button } from './Button/Button';
+export type { ButtonProps } from './Button/Button';
+
+export { Checkbox } from './Checkbox/Checkbox';
+export type { CheckboxProps } from './Checkbox/Checkbox';
+
+export { Label } from './Label/Label';
+export type { LabelProps } from './Label/Label';
+
+export { Rating } from './Rating/Rating';
+export type { RatingProps } from './Rating/Rating';
+
+export { Slider } from './Slider/Slider';
+export type { SliderProps } from './Slider/Slider';
+
+export { Switch } from './Switch/Switch';
+export type { SwitchProps } from './Switch/Switch';
+
+export { TextField } from './TextField/TextField';
+export type { TextFieldProps } from './TextField/TextField';

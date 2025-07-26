@@ -1,22 +1,25 @@
-import './components/Avatar/Avatar.module.css';
-import './components/Button/Button.module.css';
-import './components/Checkbox//Checkbox.module.css';
+// Atomic Design CSS imports
+import './atoms/Avatar/Avatar.module.css';
+import './atoms/Button/Button.module.css';
+import './atoms/Checkbox/Checkbox.module.css';
+import './atoms/Label/Label.module.css';
+import './atoms/Rating/Rating.module.css';
+import './atoms/Slider/Slider.module.css';
+import './atoms/Switch/Switch.module.css';
+import './atoms/TextField/TextField.module.css';
+
+// Legacy components CSS (to be migrated)
 import './components/DatePiker/DatePiker.module.css';
 import './components/DraggableList/DraggableList.module.css';
 import './components/IconMediaLink/IconMediaLink.module.css';
-import './components/Label/Label.module.css';
 import './components/NavBar/NavBar.module.css';
 import './components/NestedMenu/NestedMenu.module.css';
 import './components/NestedMenuItem/NestedMenuItem.module.css';
 import './components/ProfileCard/ProfileCard.module.css';
-import './components/Rating/Rating.module.css';
 import './components/Select/Select.module.css';
 import './components/Sidebar/Sidebar.module.css';
 import './components/SkillCard/SkillCard.module.css';
 import './components/SkillList/SkillList.module.css';
-import './components/Slider/Slider.module.css';
-import './components/Switch/Switch.module.css';
 import './components/Tabs/Tabs.module.css';
-import './components/TextField/TextField.module.css';
 import './components/Tooltip/Tooltip.module.css';
 import './components/WorkExperienceList/WorkExperienceList.module.css';

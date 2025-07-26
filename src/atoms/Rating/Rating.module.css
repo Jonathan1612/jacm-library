@@ -1,0 +1,258 @@
+/* Rating Component Styles */
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+.container:focus {
+  outline: none;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Estrella individual */
+.star {
+  border: none;
+  background: transparent;
+  padding: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  position: relative;
+}
+
+.star:focus {
+  outline: 2px solid var(--color-primary, #007bff);
+  outline-offset: 2px;
+}
+
+/* Tamaños */
+.small .star {
+  padding: 1px;
+}
+
+.small .starIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.medium .star {
+  padding: 2px;
+}
+
+.medium .starIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.large .star {
+  padding: 3px;
+}
+
+.large .starIcon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Estados de estrella */
+.star:not(.filled):not(.half) {
+  color: var(--color-border, #dee2e6);
+}
+
+.star.filled {
+  color: currentColor;
+}
+
+.star.half {
+  color: currentColor;
+}
+
+.star.interactive:hover {
+  transform: scale(1.1);
+}
+
+.star.interactive:active {
+  transform: scale(0.95);
+}
+
+/* Colores */
+.primary .star.filled,
+.primary .star.half {
+  color: var(--color-primary, #007bff);
+}
+
+.secondary .star.filled,
+.secondary .star.half {
+  color: var(--color-secondary, #6c757d);
+}
+
+.warning .star.filled,
+.warning .star.half {
+  color: var(--color-warning, #ffc107);
+}
+
+.error .star.filled,
+.error .star.half {
+  color: var(--color-error, #dc3545);
+}
+
+/* Estados del contenedor */
+.readOnly .star {
+  cursor: default;
+}
+
+.readOnly .star.interactive:hover {
+  transform: none;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.disabled .star {
+  cursor: not-allowed;
+}
+
+.disabled .star.interactive:hover {
+  transform: none;
+}
+
+/* Icono de estrella */
+.starIcon {
+  display: block;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+/* Icono de estrella */
+
+/* Valor del rating */
+.value {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text, #212529);
+  margin-left: 4px;
+  user-select: none;
+}
+
+.small .value {
+  font-size: 12px;
+}
+
+.large .value {
+  font-size: 16px;
+}
+
+/* Hover effects más específicos */
+.primary .star.interactive:hover {
+  color: var(--color-primary, #007bff);
+}
+
+.secondary .star.interactive:hover {
+  color: var(--color-secondary, #6c757d);
+}
+
+.warning .star.interactive:hover {
+  color: var(--color-warning, #ffc107);
+}
+
+.error .star.interactive:hover {
+  color: var(--color-error, #dc3545);
+}
+
+/* Modo oscuro */
+:global(html.dark) .star {
+  color: var(--color-border, #4a5568);
+}
+
+:global(html.dark) .value {
+  color: var(--color-text, #f7fafc);
+}
+
+:global(html.dark) .primary .star.filled,
+:global(html.dark) .primary .star.half {
+  color: var(--color-primary, #4299e1);
+}
+
+:global(html.dark) .secondary .star.filled,
+:global(html.dark) .secondary .star.half {
+  color: var(--color-secondary, #a0aec0);
+}
+
+:global(html.dark) .warning .star.filled,
+:global(html.dark) .warning .star.half {
+  color: var(--color-warning, #f6e05e);
+}
+
+:global(html.dark) .error .star.filled,
+:global(html.dark) .error .star.half {
+  color: var(--color-error, #fc8181);
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .star,
+  .starIcon {
+    transition: none;
+  }
+  
+  .star.interactive:hover {
+    transform: none;
+  }
+  
+  .star.interactive:active {
+    transform: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .large .starIcon {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .medium .starIcon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .container {
+    gap: 6px;
+  }
+  
+  .stars {
+    gap: 1px;
+  }
+}
+
+/* Estados de focus específicos para cada color */
+.primary .star:focus {
+  outline-color: var(--color-primary, #007bff);
+}
+
+.secondary .star:focus {
+  outline-color: var(--color-secondary, #6c757d);
+}
+
+.warning .star:focus {
+  outline-color: var(--color-warning, #ffc107);
+}
+
+.error .star:focus {
+  outline-color: var(--color-error, #dc3545);
+}
