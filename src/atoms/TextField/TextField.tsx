@@ -151,7 +151,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
             aria-describedby={describedBy}
             aria-invalid={ariaInvalid || error || undefined}
             {...rest}
-          />
+          />className
           
           {rightIcon && (
             <div className={styles.rightIcon} aria-hidden="true">
