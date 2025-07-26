@@ -11,6 +11,9 @@ export * from './molecules';
 // Organisms - Complex UI components
 export * from './organisms';
 
+// Organisms - Complex UI components
+export * from './organisms';
+
 // Types
 export * from './types/common';
 
