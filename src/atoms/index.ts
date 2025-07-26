@@ -20,5 +20,8 @@ export type { SliderProps } from './Slider/Slider';
 export { Switch } from './Switch/Switch';
 export type { SwitchProps } from './Switch/Switch';
 
+export { Select } from './Select/Select';
+export type { SelectProps, SelectOption } from './Select/Select';
+
 export { TextField } from './TextField/TextField';
 export type { TextFieldProps } from './TextField/TextField';

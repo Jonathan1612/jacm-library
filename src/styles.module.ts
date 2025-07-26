@@ -27,7 +27,7 @@ import './components/IconMediaLink/IconMediaLink.module.css';
 import './components/NestedMenu/NestedMenu.module.css';
 import './components/NestedMenuItem/NestedMenuItem.module.css';
 import './components/ProfileCard/ProfileCard.module.css';
-import './components/Select/Select.module.css';
+import './atoms/Select/Select.module.css';
 import './components/SkillCard/SkillCard.module.css';
 import './components/SkillList/SkillList.module.css';
 import './components/Tabs/Tabs.module.css';

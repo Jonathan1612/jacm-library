@@ -29,7 +29,7 @@ export { default as IconCounter } from './components/IconCounter/IconCounter';
 export { default as NestedMenu } from './components/NestedMenu/NestedMenu';
 export { default as NestedMenuItem } from './components/NestedMenuItem/NestedMenuItem';
 export { default as ProfileCard } from './components/ProfileCard/ProfileCard';
-export { default as Select } from './components/Select/Select';
+export { Select } from './atoms/Select/Select';
 export { default as SkillCard } from './components/SkillCard/SkillCard';
 export { default as SkillList } from './components/SkillList/SkillList';
 export { Tabs, Tab } from './components/Tabs/Tabs';
