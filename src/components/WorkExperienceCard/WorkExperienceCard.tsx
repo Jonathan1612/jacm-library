@@ -2,13 +2,14 @@ import React from 'react';
 import styles from './WorkExperienceCard.module.css';
 
 interface WorkExperienceCardProps {
-  company: string; // Nombre de la empresa
+  company: string;
   vision?: string;
-  position: string; // Puesto
-  startDate: string; // Fecha de inicio
-  endDate: string; // Fecha de fin
-  activities: string; // Descripción de actividades
-  languages: string[]; // Lenguajes o tecnologías usadas
+  position: string;
+  startDate: string;
+  endDate: string;
+  activities: string;
+  proyects?: string[];
+  languages: string[];
 }
 
 const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({
@@ -18,6 +19,7 @@ const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({
   startDate,
   endDate,
   activities,
+  proyects,
   languages,
 }) => {
   return (
@@ -32,6 +34,18 @@ const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({
       </div>
       <div className={styles.body}>
         <p className={styles.activities}>{activities}</p>
+        {proyects ? 
+        <div className={styles.languages}>
+          <strong>Proyectos Participado:</strong>
+          <ul>
+            {proyects.map((proyect, index) => (
+              <li key={index}>{proyect}</li>
+            ))}
+          </ul>
+        </div> 
+        :
+        <div></div>
+        }
         <div className={styles.languages}>
           <strong>Lenguajes Usados:</strong>
           <ul>

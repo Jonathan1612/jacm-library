@@ -3,9 +3,9 @@
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "style": "dist/index.css",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "repository": {
     "url": "https://github.com/Jonathan1612/jacm-library.git",
@@ -16,7 +16,8 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build",
+    "build": "tsdx build && npm run copy-css",
+    "copy-css": "cpx \"src/components/**/*.module.css\" dist/components --parents",
     "test": "tsdx test",
     "test:watch": "tsdx test --watch",
     "lint": "tsdx lint",
@@ -49,7 +50,6 @@
     }
   ],
   "devDependencies": {
-    "@types/react-test-renderer": "^18.3.0",
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.25.9",
     "@babel/preset-typescript": "^7.26.0",
@@ -60,7 +60,9 @@
     "@types/jest": "^29.5.14",
     "@types/node": "^22.9.0",
     "@types/react": "^18.3.12",
+    "@types/react-test-renderer": "^18.3.0",
     "babel-jest": "^29.7.0",
+    "cpx": "^1.5.0",
     "husky": "^9.1.6",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.5.4",

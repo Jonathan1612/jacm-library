@@ -1,8 +1,15 @@
+import './styles/theme.css';
+import './styles.module';
+
 export { default as Avatar } from './components/Avatar/Avatar';
 export { default as Button } from './components/Button/Button';
 export { default as Checkbox } from './components/Checkbox/Checkbox';
+export { default as Card } from './components/Card/Card';
+export { default as ColorTest } from './components/ColorTest/ColorTest';
 export { default as DraggableList } from './components/DraggableList/DraggableList';
 export { default as IconMediaLink } from './components/IconMediaLink/IconMediaLink';
+export { default as IconCounter } from './components/IconCounter/IconCounter';
+export { default as InputSearch } from './components/InputSearch/InputSearch';
 export { default as Label } from './components/Label/Label';
 export { default as NavBar } from './components/NavBar/NavBar';
 export { default as NestedMenu } from './components/NestedMenu/NestedMenu';

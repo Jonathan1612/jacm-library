@@ -1,0 +1,275 @@
+.conatinerCard {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  max-width: 320px;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+  position: relative;
+}
+
+.conatinerCard:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+}
+
+.containerImage {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #f5f5f5;
+  position: relative;
+}
+
+.containerText {
+  padding: 8px 16px;
+}
+
+.containerImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin: 0.5rem 0 0.25rem 0;
+  text-align: center;
+}
+
+p {
+  color: #555;
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+}
+
+.price {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  color: #2a9d8f;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardFooter {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+}
+
+.expandBtn {
+  position: absolute;
+  top: 140px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expandBtn:hover {
+  background: #2a9d8f;
+  color: #fff;
+}
+
+/* Modal styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 220px;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.expandedImg {
+  max-width: 70vw;
+  max-height: 70vh;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtn:hover {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.leftBtn,
+.rightBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftBtn {
+  left: 10px;
+}
+
+.rightBtn {
+  right: 10px;
+}
+
+.leftBtn:hover,
+.rightBtn:hover {
+  background: #2a9d8f;
+  color: #fff;
+}
+
+/* Modo oscuro */
+:global(html.dark) .conatinerCard {
+  background: #23272f;
+  color: #f3f3f3;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+:global(html.dark) .conatinerCard:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+:global(html.dark) .containerImage {
+  background: #2d333b;
+}
+
+:global(html.dark) h2,
+:global(html.dark) p,
+:global(html.dark) span {
+  color: #f3f3f3;
+}
+
+:global(html.dark) span {
+  color: #64ffda;
+}
+
+/* Modo oscuro para el modal */
+:global(html.dark) .modalContent {
+  background: #23272f;
+  color: #f3f3f3;
+}
+
+:global(html.dark) .modalOverlay {
+  background: rgba(20, 20, 20, 0.85);
+}
+
+:global(html.dark) .closeBtn,
+:global(html.dark) .expandBtn,
+:global(html.dark) .leftBtn,
+:global(html.dark) .rightBtn {
+  background: #23272f;
+  color: #64ffda;
+}
+
+:global(html.dark) .closeBtn:hover,
+:global(html.dark) .expandBtn:hover,
+:global(html.dark) .leftBtn:hover,
+:global(html.dark) .rightBtn:hover {
+  background: #2a9d8f;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .conatinerCard {
+    max-width: 98vw;
+    padding: 1rem;
+  }
+
+  .containerImage {
+    height: 120px;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  span {
+    font-size: 1rem;
+  }
+
+  .modalContent {
+    min-width: 90vw;
+    min-height: 40vw;
+    padding: 0.5rem;
+  }
+
+  .expandedImg {
+    max-width: 90vw;
+    max-height: 50vh;
+  }
+}

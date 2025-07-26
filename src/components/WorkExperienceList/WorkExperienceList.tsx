@@ -9,6 +9,7 @@ interface WorkExperience {
   startDate: string;
   endDate: string;
   activities: string;
+  proyects?: string[];
   languages: string[];
 }
 

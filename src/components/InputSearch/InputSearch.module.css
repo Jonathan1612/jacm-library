@@ -1,0 +1,71 @@
+.containerInputSearch {
+  border: 1px solid #727272;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 8px;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.inputSearch {
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background-color: transparent;
+  padding: 8px;
+  width: 100%;
+  color: #23272f;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.containerInputSearch:focus-within {
+  border: 2px solid #2a9d8f;
+  box-shadow: 0 0 0 2px #2a9d8f33;
+}
+
+.containerInputSearch:focus-within .icon {
+  color: #2a9d8f;
+}
+
+/* Modo oscuro */
+:global(html.dark) .containerInputSearch {
+  background: #23272f;
+  border: 1px solid #444;
+}
+:global(html.dark) .inputSearch {
+  color: #f3f3f3;
+}
+:global(html.dark) .containerInputSearch .icon {
+  color: #2a9d8f;
+}
+:global(html.dark) .containerInputSearch:focus-within {
+  border: 2px solid #64ffda;
+  box-shadow: 0 0 0 2px #64ffda33;
+}
+:global(html.dark) .containerInputSearch:focus-within .icon {
+  color: #64ffda;
+}
+
+@media (max-width: 600px) {
+  .containerInputSearch {
+    padding: 6px;
+  }
+  .inputSearch {
+    font-size: 0.95rem;
+    padding: 6px;
+  }
+}
+

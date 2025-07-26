@@ -1,0 +1,30 @@
+:root {
+  /* Modo claro */
+  --color-primary: #e8edf2; /* ← este es el fondo para NavBar en modo claro */
+  --color-primary-light: #cbd5e1;
+  --color-secondary: #2c3e50;
+
+  --color-success: #A3D9B1;
+  --color-warning: #F9E79F;
+  --color-error: #F5B7B1;
+
+  --color-bg: #F4F6F7;
+  --color-surface: #ffffff;
+  --color-border: #CCCCCC;
+
+  --color-text: #2D3436;
+  --color-text-secondary: #555;
+}
+
+html.dark {
+  --color-primary: #1b2631; /* ← se vuelve oscuro solo en modo oscuro */
+  --color-primary-light: #344454;
+  --color-secondary: #2c3e50;
+
+  --color-bg: #12181f;
+  --color-surface: #1b2631;
+  --color-border: #2c3e50;
+
+  --color-text: #F0F3F4;
+  --color-text-secondary: #AAAAAA;
+}

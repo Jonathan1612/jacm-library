@@ -1,5 +1,5 @@
-import React,{ CSSProperties, ButtonHTMLAttributes } from "react";
-import styles from "./Button.module.css";
+import React, { CSSProperties, ButtonHTMLAttributes } from 'react';
+import styles from './Button.module.css';
 
 type ButtonProps = {
   useClassName?: string;
@@ -7,15 +7,15 @@ type ButtonProps = {
   leftIcon?: string;
   rightIcon?: string;
   name: string;
-  variant?: "primary" | "secondary" | "normal";
-  size?: "small" | "large" | "medium";
+  variant?: 'primary' | 'secondary' | 'normal';
+  size?: 'small' | 'large' | 'medium';
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: React.FC<ButtonProps> = ({
   name,
-  variant = "primary",
-  size = "small",
-  useClassName = "",
+  variant = 'primary',
+  size = 'small',
+  useClassName = '',
   leftIcon,
   rightIcon,
   ...buttonProps
