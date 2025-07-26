@@ -1,0 +1,128 @@
+/* RatingField Molecule Styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* Orientaciones - por defecto es vertical (label arriba, rating abajo) */
+.vertical .container {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Tamaños */
+.small {
+  gap: 6px;
+}
+
+.small.vertical .container {
+  gap: 8px;
+}
+
+.medium {
+  gap: 8px;
+}
+
+.medium.vertical .container {
+  gap: 12px;
+}
+
+.large {
+  gap: 10px;
+}
+
+.large.vertical .container {
+  gap: 16px;
+}
+
+/* Label */
+.label {
+  flex-shrink: 0;
+}
+
+.vertical .label {
+  margin-bottom: 0;
+}
+
+/* Wrapper del rating */
+.ratingWrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* Estados */
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mensaje de error */
+.errorMessage {
+  font-size: 12px;
+  color: var(--color-error, #dc3545);
+  line-height: 1.3;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.errorMessage::before {
+  content: '⚠';
+  font-size: 14px;
+}
+
+.small .errorMessage {
+  font-size: 11px;
+}
+
+.large .errorMessage {
+  font-size: 13px;
+}
+
+/* Texto de ayuda */
+.helperText {
+  font-size: 12px;
+  color: var(--color-text-secondary, #6c757d);
+  line-height: 1.3;
+}
+
+.small .helperText {
+  font-size: 11px;
+}
+
+.large .helperText {
+  font-size: 13px;
+}
+
+/* Modo oscuro */
+:global(html.dark) .errorMessage {
+  color: var(--color-error, #fc8181);
+}
+
+:global(html.dark) .helperText {
+  color: var(--color-text-secondary, #a0aec0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vertical .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .large {
+    gap: 8px;
+  }
+  
+  .large.vertical .container {
+    gap: 12px;
+  }
+}

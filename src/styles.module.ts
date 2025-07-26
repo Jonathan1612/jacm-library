@@ -8,6 +8,11 @@ import './atoms/Slider/Slider.module.css';
 import './atoms/Switch/Switch.module.css';
 import './atoms/TextField/TextField.module.css';
 
+// Molecules CSS
+import './molecules/SearchField/SearchField.module.css';
+import './molecules/FormField/FormField.module.css';
+import './molecules/RatingField/RatingField.module.css';
+
 // Legacy components CSS (to be migrated)
 import './components/DatePiker/DatePiker.module.css';
 import './components/DraggableList/DraggableList.module.css';

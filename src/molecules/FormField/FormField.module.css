@@ -1,0 +1,40 @@
+/* FormField Molecule Styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* Tamaños */
+.small {
+  gap: 4px;
+}
+
+.medium {
+  gap: 6px;
+}
+
+.large {
+  gap: 8px;
+}
+
+/* Estados - manejados por el TextField interno */
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .large {
+    gap: 6px;
+  }
+  
+  .medium {
+    gap: 4px;
+  }
+}

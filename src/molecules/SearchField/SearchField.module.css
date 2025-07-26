@@ -1,0 +1,155 @@
+/* SearchField Molecule Styles */
+.container {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* Tamaños */
+.small {
+  gap: 6px;
+}
+
+.medium {
+  gap: 8px;
+}
+
+.large {
+  gap: 10px;
+}
+
+/* Estados */
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Acciones del lado derecho */
+.rightActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-right: 4px;
+}
+
+/* Botón de limpiar */
+.clearButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary, #6c757d);
+  transition: all 0.2s ease-in-out;
+  outline: none;
+}
+
+.clearButton:hover {
+  background-color: var(--color-bg, #f8f9fa);
+  color: var(--color-text, #212529);
+}
+
+.clearButton:focus {
+  outline: 2px solid var(--color-primary, #007bff);
+  outline-offset: 1px;
+}
+
+.clearButton:active {
+  transform: scale(0.95);
+}
+
+/* Wrapper del icono de búsqueda */
+.searchIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary, #6c757d);
+  padding: 4px;
+}
+
+/* Spinner de carga */
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.spinnerCircle {
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--color-border, #dee2e6);
+  border-top: 2px solid var(--color-primary, #007bff);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Botón de búsqueda */
+.searchButton {
+  flex-shrink: 0;
+  min-width: auto;
+}
+
+/* Modo oscuro */
+:global(html.dark) .clearButton {
+  color: var(--color-text-secondary, #a0aec0);
+}
+
+:global(html.dark) .clearButton:hover {
+  background-color: var(--color-bg, #2d3748);
+  color: var(--color-text, #f7fafc);
+}
+
+:global(html.dark) .searchIconWrapper {
+  color: var(--color-text-secondary, #a0aec0);
+}
+
+:global(html.dark) .spinnerCircle {
+  border-color: var(--color-border, #4a5568);
+  border-top-color: var(--color-primary, #4299e1);
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .clearButton,
+  .spinnerCircle {
+    transition: none;
+  }
+  
+  .spinnerCircle {
+    animation: none;
+  }
+  
+  .clearButton:active {
+    transform: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    gap: 6px;
+  }
+  
+  .large {
+    gap: 8px;
+  }
+  
+  .rightActions {
+    gap: 2px;
+  }
+}

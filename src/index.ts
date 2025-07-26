@@ -5,6 +5,9 @@ import './styles.module';
 // Atoms - Basic building blocks
 export * from './atoms';
 
+// Molecules - Simple combinations of atoms
+export * from './molecules';
+
 // Types
 export * from './types/common';
 
