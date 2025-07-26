@@ -1,0 +1,193 @@
+/* Avatar Component Styles */
+.avatar {
+  /* Reset básico */
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  
+  /* Estilos base */
+  background-color: var(--color-secondary, #6c757d);
+  color: white;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+/* Formas */
+.circle {
+  border-radius: 50%;
+}
+
+.square {
+  border-radius: 0;
+}
+
+.rounded {
+  border-radius: var(--border-radius-md, 8px);
+}
+
+/* Tamaños */
+.small {
+  width: 32px;
+  height: 32px;
+  font-size: 12px;
+}
+
+.medium {
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
+}
+
+.large {
+  width: 64px;
+  height: 64px;
+  font-size: 24px;
+}
+
+/* Estado clickeable */
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.clickable:active {
+  transform: scale(0.98);
+}
+
+.clickable:focus-visible {
+  outline: 2px solid var(--color-primary, #007bff);
+  outline-offset: 2px;
+}
+
+/* Estado de carga */
+.loading {
+  background-color: var(--color-border, #dee2e6);
+  color: transparent;
+}
+
+/* Elementos internos */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.initials {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Spinner de carga */
+.spinner {
+  width: 50%;
+  height: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Colores generados automáticamente (se pueden aplicar via JS) */
+.avatar[data-color="1"] { background-color: #e74c3c; }
+.avatar[data-color="2"] { background-color: #3498db; }
+.avatar[data-color="3"] { background-color: #2ecc71; }
+.avatar[data-color="4"] { background-color: #f39c12; }
+.avatar[data-color="5"] { background-color: #9b59b6; }
+.avatar[data-color="6"] { background-color: #1abc9c; }
+.avatar[data-color="7"] { background-color: #34495e; }
+.avatar[data-color="8"] { background-color: #e67e22; }
+
+/* Modo oscuro */
+:global(html.dark) .avatar {
+  background-color: var(--color-surface, #2d3748);
+  color: var(--color-text, #f7fafc);
+}
+
+:global(html.dark) .loading {
+  background-color: var(--color-border, #4a5568);
+}
+
+:global(html.dark) .fallback {
+  color: rgba(247, 250, 252, 0.7);
+}
+
+:global(html.dark) .spinner {
+  border-color: rgba(247, 250, 252, 0.3);
+  border-top-color: rgba(247, 250, 252, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .large {
+    width: 56px;
+    height: 56px;
+    font-size: 20px;
+  }
+  
+  .medium {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .small {
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
+  }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .avatar {
+    transition: none;
+  }
+  
+  .clickable:hover {
+    transform: none;
+  }
+  
+  .clickable:active {
+    transform: none;
+  }
+  
+  .spinner {
+    animation: none;
+  }
+}
+
+/* Estado de error de imagen */
+.avatar img:not([src]),
+.avatar img[src=""] {
+  display: none;
+}

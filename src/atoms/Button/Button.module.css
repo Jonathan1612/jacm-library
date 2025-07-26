@@ -1,0 +1,217 @@
+/* Button Component Styles */
+.button {
+  /* Reset básico */
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  
+  /* Estilos base */
+  border-radius: var(--border-radius-md, 8px);
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  white-space: nowrap;
+  
+  /* Estados por defecto */
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Tamaños */
+.small {
+  padding: 8px 16px;
+  font-size: 14px;
+  min-height: 32px;
+}
+
+.medium {
+  padding: 12px 20px;
+  font-size: 16px;
+  min-height: 40px;
+}
+
+.large {
+  padding: 16px 24px;
+  font-size: 18px;
+  min-height: 48px;
+}
+
+/* Variantes de color */
+.primary {
+  background-color: var(--color-primary, #007bff);
+  color: white;
+}
+
+.primary:hover:not(:disabled) {
+  background-color: var(--color-primary-dark, #0056b3);
+  transform: translateY(-1px);
+}
+
+.primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.secondary {
+  background-color: var(--color-secondary, #6c757d);
+  color: white;
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: var(--color-secondary-dark, #545b62);
+  transform: translateY(-1px);
+}
+
+.success {
+  background-color: var(--color-success, #28a745);
+  color: white;
+}
+
+.success:hover:not(:disabled) {
+  background-color: var(--color-success-dark, #1e7e34);
+  transform: translateY(-1px);
+}
+
+.warning {
+  background-color: var(--color-warning, #ffc107);
+  color: var(--color-text, #212529);
+}
+
+.warning:hover:not(:disabled) {
+  background-color: var(--color-warning-dark, #e0a800);
+  transform: translateY(-1px);
+}
+
+.error {
+  background-color: var(--color-error, #dc3545);
+  color: white;
+}
+
+.error:hover:not(:disabled) {
+  background-color: var(--color-error-dark, #c82333);
+  transform: translateY(-1px);
+}
+
+.info {
+  background-color: var(--color-info, #17a2b8);
+  color: white;
+}
+
+.info:hover:not(:disabled) {
+  background-color: var(--color-info-dark, #138496);
+  transform: translateY(-1px);
+}
+
+.normal {
+  background-color: var(--color-surface, #f8f9fa);
+  color: var(--color-text, #212529);
+  border: 1px solid var(--color-border, #dee2e6);
+}
+
+.normal:hover:not(:disabled) {
+  background-color: var(--color-bg, #e9ecef);
+  border-color: var(--color-border-hover, #adb5bd);
+  transform: translateY(-1px);
+}
+
+/* Modificadores */
+.fullWidth {
+  width: 100%;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.loading {
+  cursor: wait;
+  pointer-events: none;
+}
+
+/* Elementos internos */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftIcon,
+.rightIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.leftIcon {
+  margin-right: 4px;
+}
+
+.rightIcon {
+  margin-left: 4px;
+}
+
+/* Spinner de carga */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estados de foco */
+.button:focus-visible {
+  outline: 2px solid var(--color-primary, #007bff);
+  outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .large {
+    padding: 14px 20px;
+    font-size: 16px;
+    min-height: 44px;
+  }
+  
+  .medium {
+    padding: 10px 16px;
+    font-size: 14px;
+    min-height: 36px;
+  }
+  
+  .small {
+    padding: 6px 12px;
+    font-size: 12px;
+    min-height: 28px;
+  }
+}
+
+/* Modo oscuro */
+:global(html.dark) .normal {
+  background-color: var(--color-surface, #2d3748);
+  color: var(--color-text, #f7fafc);
+  border-color: var(--color-border, #4a5568);
+}
+
+:global(html.dark) .normal:hover:not(:disabled) {
+  background-color: var(--color-bg, #4a5568);
+  border-color: var(--color-border-hover, #718096);
+}

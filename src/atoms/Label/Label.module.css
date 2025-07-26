@@ -1,0 +1,146 @@
+/* Label Component Styles */
+.label {
+  /* Reset básico */
+  font: inherit;
+  
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  
+  /* Estilos base */
+  font-weight: 500;
+  line-height: 1.4;
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* Tamaños */
+.small {
+  font-size: 12px;
+}
+
+.medium {
+  font-size: 14px;
+}
+
+.large {
+  font-size: 16px;
+}
+
+/* Variantes de color */
+.primary {
+  color: var(--color-primary, #007bff);
+}
+
+.secondary {
+  color: var(--color-secondary, #6c757d);
+}
+
+.success {
+  color: var(--color-success, #28a745);
+}
+
+.warning {
+  color: var(--color-warning, #ffc107);
+}
+
+.error {
+  color: var(--color-error, #dc3545);
+}
+
+.info {
+  color: var(--color-info, #17a2b8);
+}
+
+.normal {
+  color: var(--color-text, #212529);
+}
+
+/* Estado de error */
+.label.error {
+  color: var(--color-error, #dc3545);
+}
+
+/* Indicador de requerido */
+.required {
+  color: var(--color-error, #dc3545);
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+/* Estados de hover */
+.label:hover {
+  color: var(--color-text, #212529);
+}
+
+.primary:hover {
+  color: var(--color-primary-dark, #0056b3);
+}
+
+.secondary:hover {
+  color: var(--color-secondary-dark, #545b62);
+}
+
+.success:hover {
+  color: var(--color-success-dark, #1e7e34);
+}
+
+.warning:hover {
+  color: var(--color-warning-dark, #e0a800);
+}
+
+.error:hover,
+.label.error:hover {
+  color: var(--color-error-dark, #c82333);
+}
+
+.info:hover {
+  color: var(--color-info-dark, #138496);
+}
+
+/* Estados de foco */
+.label:focus-within {
+  outline: 2px solid var(--color-primary, #007bff);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Modo oscuro */
+:global(html.dark) .normal {
+  color: var(--color-text, #f7fafc);
+}
+
+:global(html.dark) .label:hover {
+  color: var(--color-text, #f7fafc);
+}
+
+:global(html.dark) .primary {
+  color: var(--color-primary-light, #66b3ff);
+}
+
+:global(html.dark) .secondary {
+  color: var(--color-secondary-light, #a8b3bd);
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .label {
+    transition: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .large {
+    font-size: 15px;
+  }
+  
+  .medium {
+    font-size: 13px;
+  }
+  
+  .small {
+    font-size: 11px;
+  }
+}
