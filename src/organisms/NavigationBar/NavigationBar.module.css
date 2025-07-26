@@ -1,0 +1,336 @@
+/* NavigationBar.module.css */
+
+.navbar {
+  --navbar-height-small: 3rem;
+  --navbar-height-medium: 4rem;
+  --navbar-height-large: 5rem;
+  --navbar-padding-small: 0.5rem 1rem;
+  --navbar-padding-medium: 0.75rem 1.5rem;
+  --navbar-padding-large: 1rem 2rem;
+  --navbar-gap: 1rem;
+  --navbar-mobile-breakpoint: 768px;
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+/* Variantes de color */
+.light {
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.dark {
+  background-color: var(--color-surface-dark, #1a1a1a);
+  border-bottom: 1px solid var(--color-border-muted, #333);
+  color: var(--color-text-inverse, #ffffff);
+}
+
+.transparent {
+  background-color: transparent;
+  border-bottom: none;
+}
+
+/* Tamaños */
+.small {
+  height: var(--navbar-height-small);
+  padding: var(--navbar-padding-small);
+}
+
+.medium {
+  height: var(--navbar-height-medium);
+  padding: var(--navbar-padding-medium);
+}
+
+.large {
+  height: var(--navbar-height-large);
+  padding: var(--navbar-padding-large);
+}
+
+/* Efectos */
+.shadow {
+  box-shadow: var(--shadow-sm);
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Container principal */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+  gap: var(--navbar-gap);
+}
+
+/* Sección de marca/logo */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.titleLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  font-weight: var(--font-weight-semibold);
+  transition: opacity var(--transition-duration) var(--transition-timing);
+}
+
+.titleLink:hover {
+  opacity: 0.8;
+}
+
+.titleText {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+}
+
+/* Navegación principal */
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  display: flex;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--border-radius);
+  transition: all var(--transition-duration) var(--transition-timing);
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+  background-color: var(--color-primary-light, color-mix(in srgb, var(--color-primary) 10%, transparent));
+}
+
+.navLink.active {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.navLink.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: 1px;
+}
+
+.navLink.disabled {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.navLink.disabled:hover {
+  background-color: transparent;
+}
+
+.navIcon {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-sm);
+}
+
+/* Contenido derecho */
+.rightContent {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Botón de menú móvil */
+.mobileMenuButton {
+  display: none;
+}
+
+/* Menú móvil */
+.mobileMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: inherit;
+  border-top: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  z-index: 999;
+  padding: 1rem 0;
+}
+
+.mobileMenuItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  font-weight: var(--font-weight-medium);
+  transition: background-color var(--transition-duration) var(--transition-timing);
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mobileMenuItem:hover {
+  background-color: var(--color-primary-light, color-mix(in srgb, var(--color-primary) 10%, transparent));
+}
+
+.mobileMenuItem.active {
+  background-color: var(--color-primary-light, color-mix(in srgb, var(--color-primary) 15%, transparent));
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.mobileMenuItem.disabled {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.mobileMenuItem.disabled:hover {
+  background-color: transparent;
+}
+
+.menuIcon {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  flex-shrink: 0;
+}
+
+/* Estados del menú móvil */
+.mobileMenuOpen .mobileMenu {
+  display: block;
+  animation: slideDown 0.2s ease-out;
+}
+
+/* Media queries responsivas */
+@media (max-width: 768px) {
+  .navigation {
+    display: none;
+  }
+  
+  .mobileMenuButton {
+    display: flex;
+  }
+
+  .container {
+    gap: 0.5rem;
+  }
+  
+  .brand {
+    gap: 0.5rem;
+  }
+  
+  .titleText {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .small,
+  .medium,
+  .large {
+    padding: 0.5rem 1rem;
+  }
+  
+  .titleText {
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Estados de focus */
+.navLink:focus-visible,
+.titleLink:focus-visible,
+.mobileMenuButton:focus-visible,
+.mobileMenuItem:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Tema oscuro */
+@media (prefers-color-scheme: dark) {
+  .light {
+    background-color: var(--color-surface-dark, #1a1a1a);
+    border-bottom-color: var(--color-border-muted, #333);
+    color: var(--color-text-inverse, #ffffff);
+  }
+}
+
+/* Animaciones */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Variaciones de tamaño para elementos internos */
+.small .titleText {
+  font-size: var(--font-size-base);
+}
+
+.small .navLink {
+  padding: 0.375rem 0.75rem;
+  font-size: var(--font-size-sm);
+}
+
+.large .titleText {
+  font-size: var(--font-size-xl);
+}
+
+.large .navLink {
+  padding: 0.625rem 1.25rem;
+  font-size: var(--font-size-base);
+}

@@ -8,6 +8,9 @@ export * from './atoms';
 // Molecules - Simple combinations of atoms
 export * from './molecules';
 
+// Organisms - Complex UI components
+export * from './organisms';
+
 // Types
 export * from './types/common';
 
