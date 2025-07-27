@@ -19,6 +19,7 @@ import './organisms/Sidebar/Sidebar.module.css';
 import './organisms/DataTable/DataTable.module.css';
 import './organisms/Modal/Modal.module.css';
 import './organisms/FormLayout/FormLayout.module.css';
+import './organisms/Tabs/Tabs.module.css';
 
 // Legacy components CSS (to be migrated)
 import './components/DatePiker/DatePiker.module.css';
@@ -30,6 +31,5 @@ import './components/ProfileCard/ProfileCard.module.css';
 import './atoms/Select/Select.module.css';
 import './components/SkillCard/SkillCard.module.css';
 import './components/SkillList/SkillList.module.css';
-import './components/Tabs/Tabs.module.css';
 import './components/Tooltip/Tooltip.module.css';
 import './components/WorkExperienceList/WorkExperienceList.module.css';

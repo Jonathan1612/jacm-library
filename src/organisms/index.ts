@@ -12,3 +12,6 @@ export type { ModalProps } from './Modal';
 
 export { FormLayout } from './FormLayout';
 export type { FormLayoutProps, FormLayoutField, FormSection } from './FormLayout';
+
+export { Tabs, TabItem } from './Tabs';
+export type { TabsProps, TabItemProps } from './Tabs';

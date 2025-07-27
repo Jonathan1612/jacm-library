@@ -32,7 +32,7 @@ export { default as ProfileCard } from './components/ProfileCard/ProfileCard';
 export { Select } from './atoms/Select/Select';
 export { default as SkillCard } from './components/SkillCard/SkillCard';
 export { default as SkillList } from './components/SkillList/SkillList';
-export { Tabs, Tab } from './components/Tabs/Tabs';
+export { Tabs, TabItem } from './organisms/Tabs/Tabs';
 export { default as Tooltip } from './components/Tooltip/Tooltip';
 export { default as WorkExperienceList } from './components/WorkExperienceList/WorkExperienceList';
 
