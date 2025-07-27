@@ -1,0 +1,273 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-duration) var(--transition-timing);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Variantes */
+.card.outlined {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.card.elevated {
+  border: none;
+  box-shadow: var(--shadow-md);
+}
+
+.card.filled {
+  border: none;
+  background: var(--color-surface-variant);
+}
+
+.card.primary {
+  border-color: var(--color-primary);
+  background: var(--color-primary-alpha);
+}
+
+.card.secondary {
+  border-color: var(--color-secondary);
+  background: var(--color-secondary-alpha);
+}
+
+/* Padding */
+.card.paddingNone {
+  padding: 0;
+}
+
+.card.paddingSmall {
+  padding: 12px;
+}
+
+.card.paddingMedium {
+  padding: 16px;
+}
+
+.card.paddingLarge {
+  padding: 24px;
+}
+
+/* Border radius */
+.card.radiusNone {
+  border-radius: 0;
+}
+
+.card.radiusSmall {
+  border-radius: var(--border-radius-sm);
+}
+
+.card.radiusMedium {
+  border-radius: var(--border-radius);
+}
+
+.card.radiusLarge {
+  border-radius: var(--border-radius-lg);
+}
+
+/* Shadow */
+.card.shadowNone {
+  box-shadow: none;
+}
+
+.card.shadowSmall {
+  box-shadow: var(--shadow-sm);
+}
+
+.card.shadowMedium {
+  box-shadow: var(--shadow-md);
+}
+
+.card.shadowLarge {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Estados */
+.card.hoverable:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.card.clickable {
+  cursor: pointer;
+}
+
+.card.clickable:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.card.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 16px 0 16px;
+  min-height: 72px;
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.action {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* Content */
+.content {
+  padding: 16px;
+  flex: 1;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.content:first-child {
+  padding-top: 16px;
+}
+
+.content:last-child {
+  padding-bottom: 16px;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px 16px 16px;
+  margin-top: auto;
+}
+
+.actions.alignLeft {
+  justify-content: flex-start;
+}
+
+.actions.alignCenter {
+  justify-content: center;
+}
+
+.actions.alignRight {
+  justify-content: flex-end;
+}
+
+.actions.alignSpaceBetween {
+  justify-content: space-between;
+}
+
+/* Media */
+.media {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  background: var(--color-surface-variant);
+}
+
+.media.clickableMedia {
+  cursor: pointer;
+  transition: all var(--transition-duration);
+}
+
+.media.clickableMedia:hover {
+  opacity: 0.9;
+}
+
+.media.clickableMedia:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 12px 0 12px;
+    min-height: 60px;
+  }
+  
+  .content {
+    padding: 12px;
+  }
+  
+  .actions {
+    padding: 8px 12px 12px 12px;
+  }
+  
+  .card.paddingSmall {
+    padding: 8px;
+  }
+  
+  .card.paddingMedium {
+    padding: 12px;
+  }
+  
+  .card.paddingLarge {
+    padding: 16px;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: var(--color-surface-dark);
+    border-color: var(--color-border-dark);
+  }
+  
+  .title {
+    color: var(--color-text-dark);
+  }
+  
+  .subtitle {
+    color: var(--color-text-secondary-dark);
+  }
+  
+  .content {
+    color: var(--color-text-dark);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .card {
+    border-width: 2px;
+  }
+  
+  .card.clickable:focus {
+    outline-width: 3px;
+  }
+}

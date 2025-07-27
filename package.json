@@ -17,7 +17,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build && npm run copy-css",
-    "copy-css": "cpx \"src/atoms/**/*.module.css\" dist/atoms && cpx \"src/molecules/**/*.module.css\" dist/molecules && cpx \"src/organisms/**/*.module.css\" dist/organisms && cpx \"src/components/**/*.module.css\" dist/components",
+    "copy-css": "cpx \"src/atoms/**/*.module.css\" dist/atoms && cpx \"src/molecules/**/*.module.css\" dist/molecules && cpx \"src/organisms/**/*.module.css\" dist/organisms",
     "test": "tsdx test",
     "test:watch": "tsdx test --watch",
     "lint": "tsdx lint",

@@ -1,0 +1,156 @@
+.profileCard {
+  position: relative;
+  overflow: hidden;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.profileCard.clickable {
+  cursor: pointer;
+  transition: transform var(--transition-duration) var(--transition-timing);
+}
+
+.profileCard.clickable:hover {
+  transform: translateY(-2px);
+}
+
+/* Cover Image */
+.coverContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-surface-variant);
+}
+
+.coverImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Avatar Container */
+.avatarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.avatarContainer.overlayAvatar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 20px; /* Ajuste para que esté parcialmente sobre la cover */
+}
+
+.avatarContainer.nocover {
+  padding: 20px 0 0 0;
+}
+
+.avatar {
+  border: 3px solid var(--color-surface);
+  box-shadow: var(--shadow-md);
+}
+
+/* Content */
+.content {
+  text-align: center;
+  padding: 60px 20px 20px 20px !important; /* Espacio para el avatar superpuesto */
+}
+
+.content:has(.avatarContainer.nocover) {
+  padding-top: 10px !important;
+}
+
+.info {
+  margin-bottom: 16px;
+}
+
+.name {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+
+.description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profileCard {
+    max-width: 280px;
+  }
+  
+  .content {
+    padding: 50px 16px 16px 16px !important;
+  }
+  
+  .name {
+    font-size: var(--font-size-lg);
+  }
+  
+  .subtitle,
+  .description {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .profileCard {
+    max-width: 100%;
+  }
+  
+  .content {
+    padding: 40px 12px 12px 12px !important;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .name {
+    color: var(--color-text-dark);
+  }
+  
+  .subtitle,
+  .description {
+    color: var(--color-text-secondary-dark);
+  }
+  
+  .avatar {
+    border-color: var(--color-surface-dark);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .avatar {
+    border-width: 4px;
+  }
+  
+  .name {
+    font-weight: 700;
+  }
+}

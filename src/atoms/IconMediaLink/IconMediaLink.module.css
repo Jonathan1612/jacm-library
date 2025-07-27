@@ -1,0 +1,223 @@
+.iconMediaLink {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-duration) var(--transition-timing);
+  cursor: pointer;
+  outline: none;
+}
+
+.iconMediaLink:hover {
+  transform: translateY(-2px);
+}
+
+.iconMediaLink:focus {
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.iconMediaLink:active {
+  transform: translateY(0);
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+.name {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color var(--transition-duration) var(--transition-timing);
+}
+
+/* Sizes */
+.iconMediaLink.small .icon {
+  width: 32px;
+  height: 32px;
+}
+
+.iconMediaLink.small .name {
+  font-size: var(--font-size-xs);
+}
+
+.iconMediaLink.small {
+  padding: 8px;
+  gap: 6px;
+}
+
+.iconMediaLink.large .icon {
+  width: 64px;
+  height: 64px;
+}
+
+.iconMediaLink.large .name {
+  font-size: var(--font-size-base);
+}
+
+.iconMediaLink.large {
+  padding: 16px;
+  gap: 12px;
+}
+
+/* Variants */
+.iconMediaLink.filled {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.iconMediaLink.filled:hover {
+  background: var(--color-background-hover);
+  border-color: var(--color-border-hover);
+}
+
+.iconMediaLink.outlined {
+  background: transparent;
+  border: 1px solid var(--color-border);
+}
+
+.iconMediaLink.outlined:hover {
+  background: var(--color-background-hover);
+  border-color: var(--color-border-hover);
+}
+
+.iconMediaLink.ghost {
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.iconMediaLink.ghost:hover {
+  background: var(--color-background-hover);
+}
+
+/* Shapes */
+.iconMediaLink.circle .iconContainer {
+  border-radius: 50%;
+}
+
+.iconMediaLink.circle .icon {
+  border-radius: 50%;
+}
+
+/* States */
+.iconMediaLink.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.iconMediaLink.disabled:hover {
+  transform: none;
+}
+
+/* Hover effects for icons */
+.iconMediaLink:hover .icon {
+  transform: scale(1.1);
+}
+
+.iconMediaLink:hover .name {
+  color: var(--color-primary);
+}
+
+/* Active state */
+.iconMediaLink:active .icon {
+  transform: scale(0.95);
+}
+
+/* Focus state for keyboard navigation */
+.iconMediaLink:focus .iconContainer {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .iconMediaLink.filled {
+    background: var(--color-surface-dark);
+    border-color: var(--color-border-dark);
+  }
+  
+  .iconMediaLink.filled:hover {
+    background: var(--color-background-hover-dark);
+    border-color: var(--color-border-hover-dark);
+  }
+  
+  .iconMediaLink.outlined {
+    border-color: var(--color-border-dark);
+  }
+  
+  .iconMediaLink.outlined:hover {
+    background: var(--color-background-hover-dark);
+    border-color: var(--color-border-hover-dark);
+  }
+  
+  .iconMediaLink.ghost:hover {
+    background: var(--color-background-hover-dark);
+  }
+  
+  .name {
+    color: var(--color-text-dark);
+  }
+  
+  .iconMediaLink:hover .name {
+    color: var(--color-primary-dark);
+  }
+  
+  .iconMediaLink:focus {
+    box-shadow: 0 0 0 2px var(--color-primary-dark);
+  }
+  
+  .iconMediaLink:focus .iconContainer {
+    outline-color: var(--color-primary-dark);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .iconMediaLink {
+    border-width: 2px;
+  }
+  
+  .iconMediaLink:focus {
+    box-shadow: 0 0 0 3px var(--color-primary);
+  }
+  
+  .iconMediaLink:focus .iconContainer {
+    outline-width: 3px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .iconMediaLink,
+  .iconContainer,
+  .icon,
+  .name {
+    transition: none;
+  }
+  
+  .iconMediaLink:hover {
+    transform: none;
+  }
+  
+  .iconMediaLink:hover .icon {
+    transform: none;
+  }
+}

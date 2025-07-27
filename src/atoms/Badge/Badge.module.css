@@ -1,0 +1,160 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 10px;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.badge.standalone {
+  position: static;
+}
+
+.badge:not(.standalone) {
+  position: absolute;
+  z-index: 1;
+}
+
+/* Posiciones */
+.badge.topRight {
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.badge.topLeft {
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.badge.bottomRight {
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 50%);
+}
+
+.badge.bottomLeft {
+  bottom: 0;
+  left: 0;
+  transform: translate(-50%, 50%);
+}
+
+/* Variantes */
+.badge.primary {
+  background: var(--color-primary);
+  color: var(--color-primary-text);
+}
+
+.badge.secondary {
+  background: var(--color-secondary);
+  color: var(--color-secondary-text);
+}
+
+.badge.success {
+  background: var(--color-success);
+  color: var(--color-success-text);
+}
+
+.badge.warning {
+  background: var(--color-warning);
+  color: var(--color-warning-text);
+}
+
+.badge.danger {
+  background: var(--color-danger);
+  color: var(--color-danger-text);
+}
+
+/* Tamaños */
+.badge.small {
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 8px;
+  font-size: var(--font-size-xs);
+}
+
+.badge.medium {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 10px;
+  font-size: var(--font-size-xs);
+}
+
+.badge.large {
+  min-width: 24px;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 12px;
+  font-size: var(--font-size-sm);
+}
+
+/* Dot badge */
+.badge.dot {
+  min-width: 8px;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.badge.dot.small {
+  width: 6px;
+  height: 6px;
+}
+
+.badge.dot.medium {
+  width: 8px;
+  height: 8px;
+}
+
+.badge.dot.large {
+  width: 10px;
+  height: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .badge.large {
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .badge.primary {
+    background: var(--color-primary-dark);
+    color: var(--color-primary-text-dark);
+  }
+  
+  .badge.secondary {
+    background: var(--color-secondary-dark);
+    color: var(--color-secondary-text-dark);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .badge {
+    border: 1px solid currentColor;
+    font-weight: 700;
+  }
+}

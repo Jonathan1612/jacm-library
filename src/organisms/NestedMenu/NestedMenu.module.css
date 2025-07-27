@@ -1,0 +1,307 @@
+.nestedMenu {
+  width: 100%;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menuItem {
+  position: relative;
+}
+
+.menuItemLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  color: var(--color-text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-duration) var(--transition-timing);
+  outline: none;
+}
+
+.menuItemLabel:hover {
+  background: var(--color-background-hover);
+}
+
+.menuItemLabel:focus {
+  background: var(--color-background-hover);
+  box-shadow: inset 0 0 0 2px var(--color-primary);
+}
+
+.labelText {
+  flex: 1;
+  text-align: left;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  color: var(--color-text-secondary);
+  transition: transform var(--transition-duration) var(--transition-timing);
+}
+
+.expandable.expanded .indicator {
+  transform: rotate(90deg);
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--color-primary);
+}
+
+.link:focus {
+  color: var(--color-primary);
+}
+
+/* Submenu */
+.submenuContainer {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 1000;
+  min-width: 200px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-8px);
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+.menuItem:hover .submenuContainer {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.submenu {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+}
+
+/* Levels */
+.level0 {
+  /* Root level - sin estilos adicionales por defecto */
+}
+
+.level1 .menuItemLabel {
+  padding-left: 24px;
+}
+
+.level2 .menuItemLabel {
+  padding-left: 36px;
+}
+
+.level3 .menuItemLabel {
+  padding-left: 48px;
+}
+
+/* Submenu positioning for different levels */
+.submenuLevel0 {
+  left: 100%;
+  top: 0;
+}
+
+.submenuLevel1 {
+  left: 100%;
+  top: 0;
+}
+
+.submenuLevel2 {
+  left: 100%;
+  top: 0;
+}
+
+/* Orientations */
+.nestedMenu.horizontal {
+  display: flex;
+}
+
+.nestedMenu.horizontal .menu {
+  display: flex;
+}
+
+.nestedMenu.horizontal .submenuContainer {
+  top: 100%;
+  left: 0;
+  transform: translateY(-8px);
+}
+
+.nestedMenu.horizontal .menuItem:hover .submenuContainer {
+  transform: translateY(0);
+}
+
+/* Variants */
+.nestedMenu.sidebar {
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  height: 100%;
+}
+
+.nestedMenu.sidebar .submenuContainer {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+  transition: none;
+}
+
+.nestedMenu.sidebar .submenu {
+  padding: 0;
+}
+
+.nestedMenu.dropdown {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+}
+
+/* Submenu positions */
+.nestedMenu.submenuLeft .submenuContainer {
+  left: auto;
+  right: 100%;
+  transform: translateX(8px);
+}
+
+.nestedMenu.submenuLeft .menuItem:hover .submenuContainer {
+  transform: translateX(0);
+}
+
+.nestedMenu.submenuBottom .submenuContainer {
+  top: 100%;
+  left: 0;
+  transform: translateY(-8px);
+}
+
+.nestedMenu.submenuBottom .menuItem:hover .submenuContainer {
+  transform: translateY(0);
+}
+
+/* States */
+.menuItem.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.nestedMenu.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nestedMenu.horizontal {
+    flex-direction: column;
+  }
+  
+  .nestedMenu.horizontal .menu {
+    flex-direction: column;
+  }
+  
+  .submenuContainer {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: var(--color-background-muted);
+    border-radius: 0;
+  }
+  
+  .menuItem:hover .submenuContainer {
+    transform: none;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .menuItemLabel {
+    color: var(--color-text-dark);
+  }
+  
+  .menuItemLabel:hover {
+    background: var(--color-background-hover-dark);
+  }
+  
+  .menuItemLabel:focus {
+    background: var(--color-background-hover-dark);
+    box-shadow: inset 0 0 0 2px var(--color-primary-dark);
+  }
+  
+  .link:hover,
+  .link:focus {
+    color: var(--color-primary-dark);
+  }
+  
+  .indicator {
+    color: var(--color-text-secondary-dark);
+  }
+  
+  .submenuContainer {
+    background: var(--color-surface-dark);
+    border-color: var(--color-border-dark);
+  }
+  
+  .nestedMenu.sidebar {
+    background: var(--color-surface-dark);
+    border-color: var(--color-border-dark);
+  }
+  
+  .nestedMenu.dropdown {
+    background: var(--color-surface-dark);
+    border-color: var(--color-border-dark);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .menuItemLabel:focus {
+    box-shadow: inset 0 0 0 3px var(--color-primary);
+  }
+  
+  .submenuContainer {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .menuItemLabel,
+  .indicator,
+  .submenuContainer {
+    transition: none;
+  }
+  
+  .expandable.expanded .indicator {
+    transform: none;
+  }
+  
+  .submenuContainer {
+    transform: none;
+  }
+  
+  .menuItem:hover .submenuContainer {
+    transform: none;
+  }
+}

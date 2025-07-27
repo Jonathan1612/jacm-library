@@ -1,0 +1,172 @@
+.workExperienceList {
+  width: 100%;
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 32px 0;
+  text-align: center;
+}
+
+/* Layouts */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.workExperienceList.grid .list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.workExperienceList.timeline .list {
+  position: relative;
+  padding-left: 40px;
+}
+
+/* Experience Item */
+.experienceItem {
+  position: relative;
+  width: 100%;
+}
+
+.experienceCard {
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+/* Timeline */
+.withTimeline .experienceItem {
+  position: relative;
+}
+
+.timelineIndicator {
+  position: absolute;
+  left: -40px;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.timelineNode {
+  width: 12px;
+  height: 12px;
+  background: var(--color-primary);
+  border: 3px solid var(--color-surface);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.timelineLine {
+  width: 2px;
+  height: calc(100% + 24px);
+  background: var(--color-border);
+  margin-top: 8px;
+}
+
+.experienceItem:last-child .timelineLine {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .workExperienceList.grid .list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: var(--font-size-xl);
+    margin-bottom: 24px;
+  }
+  
+  .list {
+    gap: 16px;
+  }
+  
+  .workExperienceList.timeline .list {
+    padding-left: 30px;
+  }
+  
+  .timelineIndicator {
+    left: -30px;
+    top: 16px;
+  }
+  
+  .timelineNode {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .timelineLine {
+    height: calc(100% + 16px);
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: var(--font-size-lg);
+    margin-bottom: 16px;
+  }
+  
+  .list {
+    gap: 12px;
+  }
+  
+  .workExperienceList.timeline .list {
+    padding-left: 20px;
+  }
+  
+  .timelineIndicator {
+    left: -20px;
+    top: 12px;
+  }
+  
+  .timelineNode {
+    width: 8px;
+    height: 8px;
+    border-width: 2px;
+  }
+  
+  .timelineLine {
+    height: calc(100% + 12px);
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .title {
+    color: var(--color-text-dark);
+  }
+  
+  .timelineNode {
+    background: var(--color-primary-dark);
+    border-color: var(--color-surface-dark);
+    box-shadow: 0 0 0 2px var(--color-primary-dark);
+  }
+  
+  .timelineLine {
+    background: var(--color-border-dark);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .title {
+    font-weight: 800;
+  }
+  
+  .timelineNode {
+    border-width: 4px;
+  }
+  
+  .timelineLine {
+    width: 3px;
+  }
+}
